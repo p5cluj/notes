@@ -3,6 +3,7 @@ require_once 'config.php';
 require_once 'Database.php';
 require_once 'menu/indexMenu.php';
 require_once 'menu/errorMenu.php';
+require_once 'menu/loginMenu.php';
 
 /**
 * User class
@@ -30,17 +31,18 @@ class Bootstrap
 		switch ($type) {
 			case 'index':
 				$obj = new IndexMenu();
-				$a = $obj->Menu();
-				echo "<pre>"; print_r($a); echo "</pre>";
-				//echo $obj->ob;
+			break;
+			case 'login':
+				$obj = new loginMenu();
 			break;
 			
 			default:
 				$obj = new errorMenu();
-				$a = $obj->Menu();
-				echo "<pre>"; print_r($a); echo "</pre>";
 			break;
 		}
+
+		$a = $obj->Menu();
+		return $a;
 	}
 
 	public function getUry($uri='')

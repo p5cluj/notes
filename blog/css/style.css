@@ -52,3 +52,7 @@ table{
 	color: #DD0000;
 }
 
+.selectable{
+	border: 2px #11098D solid !important;
+	background-color: #C5BCF5 !important;
+}

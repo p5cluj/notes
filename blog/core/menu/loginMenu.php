@@ -3,7 +3,7 @@ require_once 'menu.php';
 /**
 * 
 */
-class errorMenu implements Menu
+class loginMenu implements Menu
 {
 	private $values = array(); 
 	
@@ -16,10 +16,11 @@ class errorMenu implements Menu
 
 	public function Menu()
 	{
-		$this->values['title'] = 'Error';
-		$this->values['selectable'] = 'Error';
-		$this->values['datacontent'] = 'Error text';
+		$this->values['title'] = 'login';
+		$this->values['selectable'] = 'login';
+		$this->values['datacontent'] = 'Login page';
 		return $this->values;
 	}
 
+	
 }

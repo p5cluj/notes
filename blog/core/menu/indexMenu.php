@@ -18,7 +18,7 @@ class IndexMenu implements Menu
 	{
 		$this->values['title'] = 'Index';
 		$this->values['selectable'] = 'index';
-		$this->values['datacontent'] = 'Long text';
+		$this->values['datacontent'] = 'Index text';
 		return $this->values;
 	}
 
