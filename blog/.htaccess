@@ -1,5 +1,8 @@
-Options +FollowSymLinks
-RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} !-f
+RewriteEngine On
+RewriteBase /notes/blog/
+
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+)$ index.php?uri=$1 [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]

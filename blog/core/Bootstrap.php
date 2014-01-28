@@ -1,6 +1,8 @@
 <?php
+
 require_once 'config.php';
 require_once 'Database.php';
+require_once 'Views.php';
 require_once 'menu/indexMenu.php';
 require_once 'menu/errorMenu.php';
 require_once 'menu/loginMenu.php';
@@ -10,12 +12,15 @@ require_once 'menu/loginMenu.php';
 */
 class Bootstrap  
 {
-	public  $db;
+	private $db;
+	public static  $pmessage;
 	
-	function __construct($sid)
+	function __construct()
 	{
-		$this->db = Database::getDb();
-		self::userVerification($sid);
+		$this->view = new View();
+		/*$this->db = Database::getDb();
+		self::userVerification($sid);*/
+
 	}
 
 	public static function userVerification($sid='')
@@ -35,6 +40,9 @@ class Bootstrap
 			case 'login':
 				$obj = new loginMenu();
 			break;
+			case 'login_user':
+				echo "<pre>"; print_r($_POST); echo "</pre>";
+			break;
 			
 			default:
 				$obj = new errorMenu();
@@ -50,4 +58,6 @@ class Bootstrap
 		$uri_data = explode('/', $uri);
 		return $uri_data[0];
 	}
+
+
 }
